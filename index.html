@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fox Development — Simplicidade Elevada à Potência dos Dados</title>
+  <meta name="description" content="Fox Development é um ecossistema tecnológico premium focado em unificar hardware, software avançado e sistemas inteligentes. Entregamos simplicidade elevada à potência dos dados.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="img/Fox Development Logo.png">
+</head>
+<body>
+  <canvas id="gravity-canvas"></canvas>
+
+  <header class="navbar-container">
+    <div class="navbar-content">
+      <a href="#" class="logo">
+        <img src="img/Fox Development Logo.png" alt="Fox Development" class="logo-image">
+      </a>
+      <nav class="nav-links">
+        <a href="#overview">Visão Geral</a>
+        <a href="#ecosystem">Ecossistema</a>
+        <a href="#analytics">Analytics & BI</a>
+        <a href="#console">Terminal Dev</a>
+        <a href="#about">Sobre Nós</a>
+        <a href="#process">Processo</a>
+        <a href="#architecture">Arquitetura</a>
+        <a href="#contact" class="nav-cta-btn">Fale Conosco</a>
+      </nav>
+      <button class="mobile-menu-btn" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="hero-gradient-glow"></div>
+      <div class="hero-content scroll-reveal-fade">
+        <div class="badge-container">
+          <span class="hero-badge">Conectando Hardware, Software e IA</span>
+        </div>
+        <h1 class="hero-title">
+          Simplicidade Elevada à<br>
+          <span class="gradient-text">Potência dos Dados</span>
+        </h1>
+        <p class="hero-subtitle">
+          Criamos soluções premium de automação, aplicações móveis de alta performance e inteligência de dados com interfaces minimalistas inspiradas na estética Apple e integradas com tecnologia de ponta.
+        </p>
+        <div class="hero-actions">
+          <a href="#ecosystem" class="btn btn-primary">Descobrir Ecossistema</a>
+          <a href="#console" class="btn btn-secondary">Explorar Console</a>
+        </div>
+      </div>
+      
+      <div class="device-showcase-container scroll-reveal-up">
+        <div class="device-selectors">
+          <button class="selector-btn active" data-view="telemetry"><i class="fa-solid fa-chart-line"></i> Dashboard</button>
+          <button class="selector-btn" data-view="automation"><i class="fa-solid fa-diagram-project"></i> Automação</button>
+          <button class="selector-btn" data-view="security"><i class="fa-solid fa-shield-halved"></i> Segurança</button>
+        </div>
+        
+        <div class="device-wrapper">
+          <div class="laptop-mockup" data-tilt>
+            <div class="laptop-screen-wrapper">
+              <div class="laptop-screen">
+                <div class="screen-glare"></div>
+                <div class="screen-camera"></div>
+                <div class="screen-content active" id="screen-telemetry">
+                  <div class="dashboard-nav">
+                    <span class="nav-dot red"></span>
+                    <span class="nav-dot yellow"></span>
+                    <span class="nav-dot green"></span>
+                    <div class="dashboard-nav-title">Fox Development Cockpit v1.7</div>
+                  </div>
+                  <div class="dashboard-grid">
+                    <div class="sidebar">
+                      <div class="sidebar-item active"><i class="fa-solid fa-house"></i> Geral</div>
+                      <div class="sidebar-item"><i class="fa-solid fa-server"></i> Servidores</div>
+                      <div class="sidebar-item"><i class="fa-solid fa-network-wired"></i> IoT Nodes</div>
+                    </div>
+                    <div class="main-panel">
+                      <div class="metric-row">
+                        <div class="metric-card">
+                          <span class="m-label">CPU LOAD</span>
+                          <span class="m-val">12.4%</span>
+                        </div>
+                        <div class="metric-card">
+                          <span class="m-label">RAM USED</span>
+                          <span class="m-val">4.2 GB</span>
+                        </div>
+                        <div class="metric-card">
+                          <span class="m-label">API REQUESTS</span>
+                          <span class="m-val">9,842/s</span>
+                        </div>
+                      </div>
+                      <div class="chart-container-large">
+                        <div class="chart-legend">
+                          <span>Edge Telemetry</span>
+                          <span class="live-indicator"><span class="pulse-dot"></span> LIVE</span>
+                        </div>
+                        <svg class="dashboard-svg-chart" viewBox="0 0 400 120">
+                          <defs>
+                            <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="#0071e3" stop-opacity="0.4"/>
+                              <stop offset="100%" stop-color="#0071e3" stop-opacity="0"/>
+                            </linearGradient>
+                          </defs>
+                          <path class="chart-path" d="M 0,90 Q 50,40 100,70 T 200,30 T 300,80 T 400,20 L 400,120 L 0,120 Z" fill="url(#chartGrad)"/>
+                          <path class="chart-stroke" d="M 0,90 Q 50,40 100,70 T 200,30 T 300,80 T 400,20" fill="none" stroke="#0071e3" stroke-width="2.5"/>
+                          <circle cx="200" cy="30" r="4" fill="#00f2fe" class="chart-dot"/>
+                          <circle cx="400" cy="20" r="4" fill="#0071e3" class="chart-dot"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="screen-content" id="screen-automation">
+                  <div class="dashboard-nav">
+                    <span class="nav-dot red"></span>
+                    <span class="nav-dot yellow"></span>
+                    <span class="nav-dot green"></span>
+                    <div class="dashboard-nav-title">n8n Execution Pipeline</div>
+                  </div>
+                  <div class="nodes-flow-container">
+                    <div class="flow-step">
+                      <div class="step-icon"><i class="fa-solid fa-globe"></i></div>
+                      <span>Webhook</span>
+                    </div>
+                    <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="flow-step pulse-step">
+                      <div class="step-icon"><i class="fa-solid fa-gears"></i></div>
+                      <span>Processador</span>
+                    </div>
+                    <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="flow-step">
+                      <div class="step-icon"><i class="fa-solid fa-database"></i></div>
+                      <span>Bancos SQL</span>
+                    </div>
+                  </div>
+                  <div class="mini-console-log">
+                    <div class="log-line">>> Workflow ID: fox_sync_telemetry_01</div>
+                    <div class="log-line">>> Status: WAITING_FOR_WEBHOOK_EVENT</div>
+                    <div class="log-line success-log">>> Transação 0x48FA2 executada com sucesso no nó GRU-01</div>
+                  </div>
+                </div>
+                <div class="screen-content" id="screen-security">
+                  <div class="dashboard-nav">
+                    <span class="nav-dot red"></span>
+                    <span class="nav-dot yellow"></span>
+                    <span class="nav-dot green"></span>
+                    <div class="dashboard-nav-title">Cloudflare Edge WAF Protection</div>
+                  </div>
+                  <div class="security-shield-view">
+                    <div class="shield-icon-container">
+                      <i class="fa-solid fa-shield-halved shield-glow-icon"></i>
+                    </div>
+                    <div class="security-stats">
+                      <div class="stat-box">
+                        <span class="num">0</span>
+                        <span class="lbl">Ameaças Ativas</span>
+                      </div>
+                      <div class="stat-box">
+                        <span class="num">100%</span>
+                        <span class="lbl">Uptime Cloudflare</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="laptop-hinge"></div>
+            <div class="laptop-base">
+              <div class="laptop-base-top"></div>
+              <div class="laptop-trackpad"></div>
+            </div>
+          </div>
+          
+          <div class="phone-mockup" data-tilt>
+            <div class="phone-screen">
+              <div class="dynamic-island"></div>
+              <div class="phone-header">
+                <span class="time">14:48</span>
+                <div class="icons">
+                  <i class="fa-solid fa-signal"></i>
+                  <i class="fa-solid fa-wifi"></i>
+                  <i class="fa-solid fa-battery-three-quarters"></i>
+                </div>
+              </div>
+              <div class="phone-body">
+                <div class="phone-logo">🦊</div>
+                <span class="phone-app-title">Fox Development App</span>
+                <div class="phone-stat-card">
+                  <span class="title">NÓ IOT ATIVO</span>
+                  <div class="telemetry-compact">
+                    <div class="telemetry-bar-compact" style="--h: 50%"></div>
+                    <div class="telemetry-bar-compact" style="--h: 80%"></div>
+                    <div class="telemetry-bar-compact" style="--h: 65%"></div>
+                    <div class="telemetry-bar-compact" style="--h: 90%"></div>
+                  </div>
+                  <div class="status-row">
+                    <span>Temp: 23.4°C</span>
+                    <span class="status-online"><span class="pulse-dot"></span> Online</span>
+                  </div>
+                </div>
+                <div class="phone-action-btn"><i class="fa-solid fa-power-off"></i> Disparar Automação</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="glass-orb-container">
+          <div class="glass-orb orb-1"></div>
+          <div class="glass-orb orb-2"></div>
+          <div class="glass-orb orb-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="overview-section scroll-reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Visão Geral</span>
+          <h2 class="section-title">O Ecossistema Fox Development</h2>
+          <p class="section-subtitle">Unificamos múltiplos pilares de tecnologia em uma única experiência fluida e de altíssima performance.</p>
+        </div>
+        
+        <div class="overview-grid">
+          <div class="overview-card">
+            <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Hardware Inteligente</h3>
+            <p>Integração profunda de dispositivos e sensores físicos, permitindo automação responsiva e monitoramento em tempo real com mínima latência no edge.</p>
+          </div>
+          <div class="overview-card">
+            <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Software Avançado</h3>
+            <p>Aplicações Web e Mobile desenhadas com foco em usabilidade e performance extrema. Frontends limpos, leves e totalmente responsivos.</p>
+          </div>
+          <div class="overview-card">
+            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>Sistemas Inteligentes</h3>
+            <p>Modelos de inteligência artificial aplicados à análise de dados brutos, transformando telemetria e fluxos operacionais em insights acionáveis de forma automática.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ecosystem" class="ecosystem-section scroll-reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tecnologias</span>
+          <h2 class="section-title">Nossos Pilares Tecnológicos</h2>
+          <p class="section-subtitle">Construídos sob medida para escalabilidade horizontal, latência zero e design de excelência.</p>
+        </div>
+
+        <div class="bento-grid">
+          <div class="bento-card bento-large glass-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="bento-card-content">
+              <span class="bento-badge">Automação de Fluxos</span>
+              <h3>FoxFlow Integration</h3>
+              <p>Pipelines inteligentes de dados com suporte nativo a n8n, processamento assíncrono e workflows integrados para orquestrar microsserviços complexos em segundos.</p>
+              <div class="bento-visual flow-visual">
+                <div class="node node-start"><span>Trigger</span></div>
+                <div class="connector-line"><div class="pulse"></div></div>
+                <div class="node node-process"><span>n8n Engine</span></div>
+                <div class="connector-line"><div class="pulse"></div></div>
+                <div class="node node-db"><span>Bancos SQL</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card glass-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="bento-card-content">
+              <span class="bento-badge">Backend de Alta Escala</span>
+              <h3>APIs RESTful & NestJS</h3>
+              <p>Microsserviços e estruturas modulares desenvolvidas em Node.js (NestJS) ou Python, focando em segurança de dados e processamento ágil de transações.</p>
+              <div class="bento-visual code-preview-visual">
+                <pre><code><span class="code-keyword">class</span> <span class="code-title">FoxService</span> {
+  <span class="code-keyword">async</span> <span class="code-title">process</span>(data) {
+    <span class="code-keyword">return</span> <span class="code-keyword">await</span> <span class="code-keyword">this</span>.db
+      .save(data.analyze());
+  }
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card glass-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="bento-card-content">
+              <span class="bento-badge">Frontend Responsivo</span>
+              <h3>Apple Design System</h3>
+              <p>Interfaces fluídas, tipografia refinada e efeitos de Glassmorphism com carregamento instantâneo a partir da rede global da Cloudflare.</p>
+              <div class="bento-visual ui-preview-visual">
+                <div class="ui-mockup-header">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+                <div class="ui-mockup-body">
+                  <div class="ui-mockup-bar"></div>
+                  <div class="ui-mockup-chart">
+                    <div class="chart-bar" style="--height: 40%"></div>
+                    <div class="chart-bar" style="--height: 60%"></div>
+                    <div class="chart-bar" style="--height: 85%"></div>
+                    <div class="chart-bar" style="--height: 50%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card bento-large glass-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="bento-card-content">
+              <span class="bento-badge">Hardware Integrado</span>
+              <h3>IoT & Telemetria no Edge</h3>
+              <p>Monitoramento remoto de hardware com integração em barramentos industriais e dashboards customizados para telemetria de sensores de temperatura, umidade e consumo elétrico.</p>
+              <div class="bento-visual iot-telemetry-visual">
+                <div class="telemetry-item">
+                  <span class="label">STATUS DO DISPOSITIVO</span>
+                  <span class="value success"><span class="pulse-dot"></span> ONLINE</span>
+                </div>
+                <div class="telemetry-item">
+                  <span class="label">CONSUMO DE ENERGIA</span>
+                  <span class="value">14.8 kWh</span>
+                </div>
+                <div class="telemetry-item">
+                  <span class="label">LATÊNCIA DO LINK</span>
+                  <span class="value warning">4.2 ms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="analytics" class="analytics-section scroll-reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">FoxAnalytics</span>
+          <h2 class="section-title">Inteligência de Dados & BI</h2>
+          <p class="section-subtitle">Visualizações e dashboards de alta fidelidade que transformam telemetria bruta em decisões estratégicas.</p>
+        </div>
+
+        <div class="analytics-dashboard-container">
+          <div class="analytics-dashboard" id="bi-dashboard">
+            <div class="dashboard-top-bar">
+              <div class="dash-title"><i class="fa-solid fa-chart-pie"></i> Painel Executivo — Fox Development BI</div>
+              <div class="dash-actions">
+                <span class="btn-indicator"><span class="pulse-dot"></span> Monitorando 48 canais</span>
+              </div>
+            </div>
+            
+            <div class="kpi-grid">
+              <div class="kpi-card glass-card zoom-trigger" data-kpi="revenue">
+                <div class="kpi-icon"><i class="fa-solid fa-wallet"></i></div>
+                <div class="kpi-info">
+                  <span class="kpi-label">Faturamento Operacional</span>
+                  <h3 class="kpi-value">R$ 1.48M</h3>
+                  <span class="kpi-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +18.4% este mês</span>
+                </div>
+                <div class="kpi-chart-mini">
+                  <svg viewBox="0 0 100 30" class="mini-chart-svg">
+                    <path d="M 0,25 Q 20,20 40,10 T 80,18 T 100,5" fill="none" stroke="#30d158" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="kpi-card glass-card zoom-trigger" data-kpi="uptime">
+                <div class="kpi-icon"><i class="fa-solid fa-server"></i></div>
+                <div class="kpi-info">
+                  <span class="kpi-label">Uptime Edge Nodes</span>
+                  <h3 class="kpi-value">99.998%</h3>
+                  <span class="kpi-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> Estável (GRU-01)</span>
+                </div>
+                <div class="kpi-chart-mini">
+                  <svg viewBox="0 0 100 30" class="mini-chart-svg">
+                    <path d="M 0,10 L 20,10 L 40,10 L 60,10 L 80,10 L 100,10" fill="none" stroke="#0071e3" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="kpi-card glass-card zoom-trigger" data-kpi="nodes">
+                <div class="kpi-icon"><i class="fa-solid fa-wifi"></i></div>
+                <div class="kpi-info">
+                  <span class="kpi-label">Conexões IoT Ativas</span>
+                  <h3 class="kpi-value">14,802</h3>
+                  <span class="kpi-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> +842 novas conexões</span>
+                </div>
+                <div class="kpi-chart-mini">
+                  <svg viewBox="0 0 100 30" class="mini-chart-svg">
+                    <path d="M 0,20 Q 25,5 50,15 T 100,8" fill="none" stroke="#00f2fe" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="dashboard-details-grid">
+              <div class="details-chart-card glass-card">
+                <div class="card-header-flex">
+                  <h4>DRE Consolidada — Fox Development Analytics</h4>
+                  <button id="simulate-growth-btn" class="simulate-btn"><i class="fa-solid fa-chart-line"></i> Simular +15%</button>
+                </div>
+                <div class="dre-table-container">
+                  <table class="dre-table">
+                    <thead>
+                      <tr>
+                        <th>Rubrica Financeira</th>
+                        <th class="text-right">Realizado (Acum.)</th>
+                        <th class="text-right">Desvio vs Meta</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="dre-row-header">
+                        <td>Receita Bruta de Serviços</td>
+                        <td class="text-right text-success dre-val" data-val="1842500">R$ 1.842.500</td>
+                        <td class="text-right text-success dre-pct" data-pct="14.2">+14.2%</td>
+                      </tr>
+                      <tr>
+                        <td>(-) Impostos & Deduções</td>
+                        <td class="text-right text-danger dre-val" data-val="-165825">-R$ 165.825</td>
+                        <td class="text-right text-neutral dre-pct" data-pct="-1.1">-1.1%</td>
+                      </tr>
+                      <tr class="dre-row-highlight">
+                        <td>Receita Operacional Líquida</td>
+                        <td class="text-right dre-val" data-val="1676675">R$ 1.676.675</td>
+                        <td class="text-right text-success dre-pct" data-pct="12.8">+12.8%</td>
+                      </tr>
+                      <tr>
+                        <td>(-) Infraestrutura Edge CDN (Cloudflare)</td>
+                        <td class="text-right text-danger dre-val" data-val="-78420">-R$ 78.420</td>
+                        <td class="text-right text-success dre-pct" data-pct="5.4">+5.4%</td>
+                      </tr>
+                      <tr>
+                        <td>(-) Custos de Conectividade IoT (SIM Cards)</td>
+                        <td class="text-right text-danger dre-val" data-val="-114800">-R$ 114.800</td>
+                        <td class="text-right text-danger dre-pct" data-pct="-8.2">-8.2%</td>
+                      </tr>
+                      <tr class="dre-row-highlight">
+                        <td>EBITDA Consolidado</td>
+                        <td class="text-right text-success dre-val" data-val="1483455">R$ 1.483.455</td>
+                        <td class="text-right text-success dre-pct" data-pct="18.4">+18.4%</td>
+                      </tr>
+                      <tr class="dre-row-sub">
+                        <td>Margem EBITDA</td>
+                        <td class="text-right dre-val" data-val="88.47" data-is-pct="true">88.47%</td>
+                        <td class="text-right text-success dre-pct" data-pct="2.4">+2.4%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="details-chart-card glass-card">
+                <div class="details-tab-header">
+                  <button class="details-tab-btn active" data-details-tab="n8n"><i class="fa-solid fa-network-wired"></i> Fluxo n8n</button>
+                  <button class="details-tab-btn" data-details-tab="bars"><i class="fa-solid fa-sliders"></i> Tráfego Ajustável</button>
+                </div>
+
+                <div class="details-tab-content-area" id="details-tab-content-n8n">
+                  <div class="n8n-flow-container">
+                    <div class="n8n-nodes-wrapper">
+                      <div class="n8n-node active-node" id="n8n-node-1" data-node="1">
+                        <div class="n8n-node-header">
+                          <span class="node-icon"><i class="fa-solid fa-bolt"></i></span>
+                          <span class="node-name">Webhook Trigger</span>
+                        </div>
+                        <div class="n8n-node-status" id="status-node-1"><i class="fa-solid fa-circle-check text-success"></i> 200 OK (1.2ms)</div>
+                        <div class="port output-port"></div>
+                      </div>
+                      
+                      <div class="n8n-connector" id="n8n-connector-1">
+                        <div class="pulse-line"></div>
+                      </div>
+
+                      <div class="n8n-node active-node" id="n8n-node-2" data-node="2">
+                        <div class="n8n-node-header">
+                          <span class="node-icon"><i class="fa-solid fa-code"></i></span>
+                          <span class="node-name">NestJS API</span>
+                        </div>
+                        <div class="n8n-node-status" id="status-node-2"><i class="fa-solid fa-circle-check text-success"></i> Parsed 1.48k/s</div>
+                        <div class="port input-port"></div>
+                        <div class="port output-port"></div>
+                      </div>
+
+                      <div class="n8n-connector" id="n8n-connector-2">
+                        <div class="pulse-line"></div>
+                      </div>
+
+                      <div class="n8n-node active-node" id="n8n-node-3" data-node="3">
+                        <div class="n8n-node-header">
+                          <span class="node-icon"><i class="fa-solid fa-database"></i></span>
+                          <span class="node-name">BI Publisher</span>
+                        </div>
+                        <div class="n8n-node-status" id="status-node-3"><i class="fa-solid fa-circle-check text-success"></i> Synced (0.8ms)</div>
+                        <div class="port input-port"></div>
+                      </div>
+                    </div>
+                    <div class="n8n-flow-footer">
+                      <span>Latência Total: <strong class="text-success">2.1ms</strong></span>
+                      <span>Status: <strong class="text-success">Ativo (12s ago)</strong></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="details-tab-content-area" id="details-tab-content-bars" style="display: none;">
+                  <div class="interactive-bars-container">
+                    <p class="section-subtitle-small">Arraste a barra ou use os botões para simular tráfego regional:</p>
+                    <div class="interactive-bars-list">
+                      <div class="interactive-bar-row" data-region="gru">
+                        <span class="region-name">São Paulo (GRU)</span>
+                        <div class="interactive-bar-slider-wrapper">
+                          <button class="bar-adjust-btn val-decrease"><i class="fa-solid fa-minus"></i></button>
+                          <div class="bar-slider-track">
+                            <div class="bar-slider-fill" style="width: 85%;"></div>
+                          </div>
+                          <button class="bar-adjust-btn val-increase"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <span class="region-pct">85%</span>
+                      </div>
+
+                      <div class="interactive-bar-row" data-region="gig">
+                        <span class="region-name">Rio de Janeiro (GIG)</span>
+                        <div class="interactive-bar-slider-wrapper">
+                          <button class="bar-adjust-btn val-decrease"><i class="fa-solid fa-minus"></i></button>
+                          <div class="bar-slider-track">
+                            <div class="bar-slider-fill" style="width: 45%;"></div>
+                          </div>
+                          <button class="bar-adjust-btn val-increase"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <span class="region-pct">45%</span>
+                      </div>
+
+                      <div class="interactive-bar-row" data-region="cnf">
+                        <span class="region-name">Minas Gerais (CNF)</span>
+                        <div class="interactive-bar-slider-wrapper">
+                          <button class="bar-adjust-btn val-decrease"><i class="fa-solid fa-minus"></i></button>
+                          <div class="bar-slider-track">
+                            <div class="bar-slider-fill" style="width: 30%;"></div>
+                          </div>
+                          <button class="bar-adjust-btn val-increase"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <span class="region-pct">30%</span>
+                      </div>
+                    </div>
+                    <div class="bars-simulation-feedback">
+                      <span>Média Global de Carga: <strong id="average-edge-load" class="text-success">53%</strong></span>
+                      <span id="load-status-msg" class="text-success">Eficiente</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="dashboard-overlay-focus" id="dashboard-overlay">
+            <div class="overlay-close-btn" id="overlay-close"><i class="fa-solid fa-xmark"></i> Fechar Detalhes</div>
+            <div class="overlay-content-area" id="overlay-content"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="console" class="console-section scroll-reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Terminal Interativo</span>
+          <h2 class="section-title">O Cockpit do Desenvolvedor</h2>
+          <p class="section-subtitle">Monitore microsserviços, execute rotinas e observe telemetria em tempo real diretamente da nossa interface.</p>
+        </div>
+
+        <div class="console-container glass-card">
+          <div class="console-header">
+            <div class="console-controls">
+              <span class="ctrl-dot close"></span>
+              <span class="ctrl-dot minimize"></span>
+              <span class="ctrl-dot expand"></span>
+            </div>
+            <div class="console-tabs">
+              <button class="console-tab active" data-tab="terminal">fox_cli.sh</button>
+              <button class="console-tab" data-tab="telemetry">telemetry.json</button>
+              <button class="console-tab" data-tab="pipeline">pipeline.yaml</button>
+            </div>
+          </div>
+          <div class="console-body">
+            <div id="tab-terminal" class="console-tab-content active">
+              <div class="terminal-log">
+                <div class="line"><span class="prompt">foxdev@edge:~$</span> sys_status --detailed</div>
+                <div class="line output">[SYSTEM] Inicializando verificação de integridade do ecossistema...</div>
+                <div class="line output">[OK] Conexão com Cloudflare Edge estabelecida (Latência: 1.8ms)</div>
+                <div class="line output">[OK] Instâncias de Microsserviços NestJS online (3 instâncias ativas)</div>
+                <div class="line output">[OK] Pipelines do n8n carregados com 12 automações ativas</div>
+                <div class="line output">[OK] Conexão com hardware inteligente ativa (1,480 nós reportando)</div>
+                <div class="line"><span class="prompt">foxdev@edge:~$</span> <span class="cursor-input" contenteditable="true" spellcheck="false"></span><span class="cursor-blink">|</span></div>
+              </div>
+            </div>
+            <div id="tab-telemetry" class="console-tab-content">
+              <pre><code class="language-json">{
+  "device": "FoxNode-04",
+  "status": "active",
+  "sensors": {
+    "temperature": 23.4,
+    "humidity": 45.2,
+    "voltage": 12.04
+  },
+  "network": {
+    "strength": -65,
+    "edge_node": "gru-01",
+    "tx_power": "14dBm"
+  },
+  "uptime_seconds": 864200,
+  "system_load": 0.12
+}</code></pre>
+            </div>
+            <div id="tab-pipeline" class="console-tab-content">
+              <pre><code class="language-yaml">version: '3.8'
+services:
+  nest-api:
+    image: foxdev/api:latest
+    environment:
+      - DATABASE_URL=postgresql://db.foxdev.dev
+      - REDIS_HOST=cache.foxdev.dev
+    deploy:
+      replicas: 3
+  n8n-worker:
+    image: n8n/n8n:latest
+    volumes:
+      - ./workflows:/home/node/.n8n
+  edge-proxy:
+    image: foxdev/proxy:latest
+    ports:
+      - "443:443"</code></pre>
+            </div>
+          </div>
+          <div class="console-footer">
+            <span class="status-indicator online"></span>
+            <span class="footer-text">Conectado ao nó Edge: GRU-01</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section scroll-reveal">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual glass-card">
+            <div class="about-visual-logo">
+              <span class="logo-large-icon">🦊</span>
+              <div class="logo-subtext">FOX DEVELOPMENT</div>
+            </div>
+          </div>
+          <div class="about-text-container">
+            <span class="section-tag">Sobre Nós</span>
+            <h2 class="section-title text-left-align">Fox Development</h2>
+            <p class="about-description">
+              A <strong>Fox Development</strong> nasceu da busca por alto desempenho. Entendemos que o sucesso de um negócio depende de decisões complexas bem fundamentadas e sistemas de alta qualidade.
+            </p>
+            <p class="about-description">
+              Por isso, nos tornamos uma software house especializada em impulsionar o crescimento de empresas por meio de dados robustos, infraestruturas ágeis e sistemas sob medida focados na simplicidade elevada à potência dos dados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process-section scroll-reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Metodologia</span>
+          <h2 class="section-title">Nosso Processo</h2>
+          <p class="section-subtitle">O segredo por trás do nosso sucesso. Desenvolvimento guiado por precisão, acompanhamento próximo e entregas ágeis de valor.</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step glass-card" data-step="1">
+            <div class="step-badge">01</div>
+            <h3>Definição das entregas de valor</h3>
+            <p>Todas as entregas serão definidas em conjunto com o cliente para maior assertividade da expectativa. Consideramos que uma entrega é uma <strong>história</strong>.</p>
+          </div>
+
+          <div class="process-step glass-card" data-step="2">
+            <div class="step-badge">02</div>
+            <h3>Desenvolvimento</h3>
+            <p>Desenvolvimento de altíssima qualidade, utilizando tecnologias modernas e seguras para adicionar robustez de ponta a ponta ao produto final.</p>
+          </div>
+
+          <div class="process-step glass-card" data-step="3">
+            <div class="step-badge">03</div>
+            <h3>Acompanhamento do cliente</h3>
+            <p>Realizamos reuniões de acompanhamento e checagem de qualidade minuciosa do que foi desenvolvido pela nossa equipe em cada etapa.</p>
+          </div>
+
+          <div class="process-step glass-card" data-step="4">
+            <div class="step-badge">04</div>
+            <h3>Homologação cliente</h3>
+            <p>Fase de testes e validação final executada diretamente pelo cliente no ambiente de homologação, garantindo conformidade com os requisitos.</p>
+          </div>
+
+          <div class="process-step glass-card" data-step="5">
+            <div class="step-badge">05</div>
+            <h3>Entrega de valor</h3>
+            <p>Após a validação do cliente, trabalhamos na integração final e publicação para entregar a melhor experiência operacional e de usuário.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="architecture-section scroll-reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Infraestrutura</span>
+          <h2 class="section-title">Entrega de Performance Extrema</h2>
+          <p class="section-subtitle">Arquitetura JAMstack integrada na CDN Global da Cloudflare garantindo latência zero e altíssima disponibilidade.</p>
+        </div>
+
+        <div class="architecture-grid">
+          <div class="arch-card glass-card">
+            <h3>Cloudflare Pages Edge</h3>
+            <p>Hospedagem estática com distribuição global instantânea, tirando proveito da edge caching para servir páginas com tempo de resposta sub-milissegundo.</p>
+            <div class="card-stat"><i class="fa-solid fa-bolt"></i> 99.9% Cache Hit</div>
+          </div>
+          <div class="arch-card glass-card">
+            <h3>Zero Cold Starts</h3>
+            <p>Seus aplicativos web e páginas institucionais respondem sem gargalos ou pausas de inicialização de servidores virtuais tradicionais.</p>
+            <div class="card-stat"><i class="fa-solid fa-gauge-high"></i> 0ms Delay</div>
+          </div>
+          <div class="arch-card glass-card">
+            <h3>Microsserviços Seguros</h3>
+            <p>Comunicação protegida de ponta a ponta. Integração SSL/TLS automática e WAF (Web Application Firewall) configurado na Cloudflare.</p>
+            <div class="card-stat"><i class="fa-solid fa-shield-halved"></i> Cloud WAF</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section scroll-reveal">
+      <div class="container">
+        <div class="contact-wrapper glass-card">
+          <div class="contact-info">
+            <h2>Pronto para elevar seu negócio?</h2>
+            <p>Fale conosco para criarmos soluções personalizadas de hardware inteligente, aplicativos e integrações avançadas de dados para o seu negócio.</p>
+            <div class="contact-details">
+              <div class="detail-item">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:contato@foxdevelopment.dev">contato@foxdevelopment.dev</a>
+              </div>
+              <div class="detail-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <a href="https://wa.me/5531995124519?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20como%20posso%20obter%20um%20or%C3%A7amento%21" target="_blank" rel="noopener noreferrer">+55 (31) 99512-4519</a>
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Brasil — Remoto & Presencial</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-container">
+            <form id="lead-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Nome completo</label>
+                <input type="text" id="name" required placeholder="Digite seu nome">
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail corporativo</label>
+                <input type="email" id="email" required placeholder="exemplo@empresa.com">
+              </div>
+              <div class="form-group">
+                <label for="message">Fale sobre seu projeto</label>
+                <textarea id="message" required rows="4" placeholder="Descreva brevemente sua necessidade"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span>Enviar Mensagem</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+            <div id="form-success" class="form-success-message">
+              <i class="fa-solid fa-circle-check"></i>
+              <h3>Mensagem enviada com sucesso!</h3>
+              <p>Entraremos em contato em até 24 horas úteis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="img/Fox Development Logo.png" alt="Fox Development" class="logo-image">
+      </div>
+      <p class="footer-slogan">Simplicidade Elevada à Potência dos Dados.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fox Development. Todos os direitos reservados.</p>
+        <div class="footer-links">
+          <a href="#">Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
