@@ -192,7 +192,15 @@
     const line = document.createElement('div');
     line.className = 'line';
     if (isPrompt) {
-      line.innerHTML = `<span class="prompt">foxdev@edge:~$</span> <span class="output">${text}</span>`;
+      const prompt = document.createElement('span');
+      prompt.className = 'prompt';
+      prompt.textContent = 'foxdev@edge:~$';
+
+      const output = document.createElement('span');
+      output.className = 'output';
+      output.textContent = ` ${text}`;
+
+      line.append(prompt, output);
     } else if (isOutput) {
       line.className = 'line output';
       line.textContent = text;
@@ -294,7 +302,10 @@
       const whatsappUrl = `https://wa.me/5531995124519?text=${formattedText}`;
       
       setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
+        const whatsappWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        if (whatsappWindow) {
+          whatsappWindow.opener = null;
+        }
         leadForm.style.display = 'none';
         formSuccess.style.display = 'flex';
       }, 1000);

@@ -11,8 +11,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="img/Fox Development Logo.png">
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2762851537416434');
+    fbq('track', 'PageView');
+  </script>
 </head>
 <body>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2762851537416434&ev=PageView&noscript=1" alt="">
+  </noscript>
   <canvas id="gravity-canvas"></canvas>
 
   <header class="navbar-container">
@@ -53,8 +68,14 @@
           Criamos soluções premium de automação, aplicações móveis de alta performance e inteligência de dados com interfaces minimalistas inspiradas na estética Apple e integradas com tecnologia de ponta.
         </p>
         <div class="hero-actions">
-          <a href="#ecosystem" class="btn btn-primary">Descobrir Ecossistema</a>
-          <a href="#console" class="btn btn-secondary">Explorar Console</a>
+          <div class="hero-actions-row">
+            <a href="#ecosystem" class="btn btn-primary">Descobrir Ecossistema</a>
+            <a href="#console" class="btn btn-secondary">Explorar Console</a>
+          </div>
+          <a href="https://wa.me/5531995124519?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informações%20sobre%20como%20solucionar%20meu%20software." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Resolver meu Software</span>
+          </a>
         </div>
       </div>
       
@@ -193,7 +214,9 @@
                 </div>
               </div>
               <div class="phone-body">
-                <div class="phone-logo">🦊</div>
+                <div class="phone-logo">
+                  <img src="img/Fox Development Logo.png" alt="Fox Development" class="phone-logo-image">
+                </div>
                 <span class="phone-app-title">Fox Development App</span>
                 <div class="phone-stat-card">
                   <span class="title">NÓ IOT ATIVO</span>
@@ -208,7 +231,34 @@
                     <span class="status-online"><span class="pulse-dot"></span> Online</span>
                   </div>
                 </div>
-                <div class="phone-action-btn"><i class="fa-solid fa-power-off"></i> Disparar Automação</div>
+                <div class="phone-quick-actions">
+                  <button type="button" class="phone-action-btn phone-action-btn-primary"><i class="fa-solid fa-power-off"></i> Disparar Automação</button>
+                  <button type="button" class="phone-action-btn phone-action-btn-secondary"><i class="fa-solid fa-chart-simple"></i> Abrir Dashboard</button>
+                </div>
+                <div class="phone-feed-card">
+                  <div class="phone-feed-header">
+                    <span class="title">AUTOMAÇÕES RECENTES</span>
+                    <span class="phone-feed-badge">Live</span>
+                  </div>
+                  <div class="phone-feed-list">
+                    <div class="phone-feed-item">
+                      <span class="feed-title">Webhook Financeiro</span>
+                      <span class="feed-meta">Executado agora</span>
+                    </div>
+                    <div class="phone-feed-item">
+                      <span class="feed-title">Sincronização CRM</span>
+                      <span class="feed-meta">2 min atrás</span>
+                    </div>
+                    <div class="phone-feed-item">
+                      <span class="feed-title">Node Edge CNF-02</span>
+                      <span class="feed-meta">Latência 3.1ms</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="phone-scroll-cue">
+                  <i class="fa-solid fa-arrows-up-down"></i>
+                  <span>Role para explorar</span>
+                </div>
               </div>
             </div>
           </div>
