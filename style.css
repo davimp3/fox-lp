@@ -1746,7 +1746,7 @@ main, header, footer {
 .scroll-reveal {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scroll-reveal.active {
@@ -1756,7 +1756,7 @@ main, header, footer {
 
 .scroll-reveal-fade {
   opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scroll-reveal-fade.active {
@@ -1766,7 +1766,7 @@ main, header, footer {
 .scroll-reveal-up {
   opacity: 0;
   transform: translateY(50px) rotateX(4deg);
-  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scroll-reveal-up.active {
@@ -1796,8 +1796,16 @@ main, header, footer {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   transform: scale(1.15) rotateX(8deg) translateY(40px);
   opacity: 0;
-  transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: top center;
+}
+
+.device-showcase-container.scroll-reveal-up {
+  transition-duration: 0.65s;
+}
+
+.ecosystem-section.scroll-reveal {
+  transition-duration: 0.7s;
 }
 
 .analytics-section.active .analytics-dashboard {
