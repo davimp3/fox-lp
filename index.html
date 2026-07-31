@@ -920,6 +920,78 @@ services:
   </footer>
 
   <script src="script.js"></script>
+  <!-- HUNEX — eventos de conversão Meta (Pixel + CAPI com dedupe) -->
+  <script>
+    (function () {
+      // URL do relay CAPI. Depois de subir o servidor, troca aqui pelo endereço real.
+      // Ex: "https://capi.foxdevelopment.dev/capi/event". Vazio = só Pixel (sem CAPI).
+      var CAPI_ENDPOINT = "";
+
+      function uuid() {
+        if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+        return 'e-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+      }
+
+      function getCookie(name) {
+        var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+        return m ? m.pop() : '';
+      }
+
+      // dispara no Pixel e manda o MESMO event_id pro CAPI = Meta deduplica
+      function track(eventName, customData, userData) {
+        var eventId = uuid();
+        customData = customData || {};
+        userData = userData || {};
+
+        if (typeof fbq === 'function') {
+          fbq('track', eventName, customData, { eventID: eventId });
+        }
+
+        if (!CAPI_ENDPOINT) return;
+        userData.fbp = getCookie('_fbp');
+        userData.fbc = getCookie('_fbc');
+        try {
+          fetch(CAPI_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            keepalive: true,
+            body: JSON.stringify({
+              event_name: eventName,
+              event_id: eventId,
+              event_source_url: location.href,
+              custom_data: customData,
+              user_data: userData
+            })
+          });
+        } catch (e) { /* não quebra a LP se o relay estiver fora */ }
+      }
+
+      // conteúdo visto (rolou a página) — sinal extra de intenção
+      track('ViewContent', { content_name: 'lp-fox-development' });
+
+      // clique no WhatsApp ou e-mail = Contact
+      document.querySelectorAll('a[href*="wa.me"], a[href^="mailto:"]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          var isWhats = el.href.indexOf('wa.me') > -1;
+          track('Contact', { method: isWhats ? 'whatsapp' : 'email' });
+        });
+      });
+
+      // envio do formulário = Lead (manda nome/email pro CAPI casar o usuário)
+      var form = document.getElementById('lead-form');
+      if (form) {
+        form.addEventListener('submit', function () {
+          var nome = (document.getElementById('name') || {}).value || '';
+          var partes = nome.trim().split(/\s+/);
+          track('Lead', { content_name: 'formulario-contato' }, {
+            email: (document.getElementById('email') || {}).value || '',
+            first_name: partes[0] || '',
+            last_name: partes.slice(1).join(' ') || ''
+          });
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>
